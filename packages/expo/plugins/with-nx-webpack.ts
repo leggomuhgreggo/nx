@@ -46,7 +46,7 @@ export async function withNxWebpack(config) {
                 convertShapeToPath: true,
                 convertStyleToAttrs: true,
                 convertTransform: true,
-                inlineStyles: true,
+                inlineStyles: { onlyMatchedOnce: false }, // https://github.com/svg/svgo/issues/296#issuecomment-380224461
                 mergePaths: true,
                 minifyStyles: true,
                 moveElemsAttrsToGroup: true,
@@ -66,7 +66,7 @@ export async function withNxWebpack(config) {
                 removeScriptElement: false,
                 removeStyleElement: false,
                 removeTitle: true,
-                removeUnknownsAndDefaults: true,
+                removeUnknownsAndDefaults: false, // https://github.com/svg/svgo/issues/1641
                 removeUnusedNS: true,
                 removeUselessDefs: true,
                 removeUselessStrokeAndFill: true,
